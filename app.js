@@ -1065,6 +1065,10 @@ async function scrapeAmazonRefrigerators(baseURL, startPage=1, endPage) {
 }
 
 app.get('/', async (req, res) => {
+    res.send("ok")
+});
+
+app.get('/api', async (req, res) => {
     let query = req.query.search || "all";
 
     const baseURL = `https://www.amazon.in/s?k=${query}`;
@@ -1073,6 +1077,7 @@ app.get('/', async (req, res) => {
     const data = await scrapeAmazonRefrigerators(baseURL, startPage, endPage);
     res.json(data);
 });
+
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);

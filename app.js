@@ -5,7 +5,7 @@ const fs = require('fs');
 const cors = require('cors')
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(cors()); 
 const USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36",
